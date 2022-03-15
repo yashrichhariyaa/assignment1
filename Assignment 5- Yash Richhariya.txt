@@ -1,0 +1,232 @@
+Question 1: Create a table for students with name, age, mobile no, registration no., year of batch as columns.
+Answer 1: 
+CREATE TABLE StudentInfo (
+  Name TEXT NOT NULL,
+  Age INT NOT NULL,
+  MobNum INT NOT NULL,
+  RegNum INT NOT NULL,
+  year INT NOT NULL
+);
+INSERT INTO StudentInfo(
+  Name, Age, MobNum, RegNum, year
+) 
+VALUES 
+  (
+    "Yash Richhariya", 19, 9842691032, 
+    69, 2
+  ),
+  (
+    "Ansh Khandelwal", 18, 9755270439, 
+    14, 1
+  ),
+  (
+    "Kushagra Dubey", 19, 9009003243, 
+    39, 2
+  ),
+  (
+    "Sameer Mishra", 20, 7999832444,
+    61, 3
+  ),
+  (
+    "Kartikeya Jasuja", 20, 9038321032, 
+    42, 3
+  ),
+  (
+    "Saumya Tiwari", 19, 6203290853, 
+    62, 2
+  ),
+  (
+    "Anushka Tiwari", 18, 9399754622, 
+    17, 1
+  ),  
+  (
+    "Astha Rai", 19, 8837239479, 
+    21, 2
+  ),  
+  (
+    "Avinash Trivedi", 18, 8354398323, 
+    23, 1
+  ),  
+  (
+    "Gupta Mayur", 19, 9978231793, 
+    33, 2
+  );
+SELECT * FROM StudentInfo;
+
+Question 2: Create a table for teachers with name, domain, department as column.
+Answer 2:
+CREATE TABLE Teachers (
+  Name TEXT NOT NULL,
+  Domain TEXT NOT NULL,
+  Department TEXT NOT NULL
+);
+INSERT INTO Teachers(
+  Name, Domain, Department
+) 
+VALUES 
+  (
+    "Prakhar Gautam", "OOPM", "CSE"
+  ),
+  (
+    "Suyash Dubey", "Mathematics", "EE"
+  ),
+  (
+    "Shivendu Dubey", "Basic Civil", "CE"
+  ),
+  (
+    "Sourabh Sahu", "COA", "EC"
+  ),
+  (
+    "Vikash Verma", "Wireframing", "EX"
+  ),
+  (
+    "Himanshu Kolhatkar", "Chemistry", "EE"
+  ),
+  (
+    "Dharmendra Kori", "Discrete Structure", "CS"
+  ),
+  (
+    "Avani Mishra", "Software Engineering", "CS"
+  ),
+  (
+    "Parul Sharma", "BEEE", "CE"
+  ),
+  (
+    "Ashok Verma", "English", "EX"
+  );
+SELECT * FROM Teachers;
+
+Question 3: Write a query to fetch all the students from 2020 batch.
+Answer 3:
+CREATE TABLE Fetch2020 (
+  Name TEXT NOT NULL,
+  year INT NOT NULL
+);
+INSERT INTO Fetch2020(
+  Name, year
+) 
+VALUES 
+  (
+    "Yash Richhariya", 2020
+  ),
+  (
+    "Ansh Khandelwal", 2022
+  ),
+  (
+    "Kushagra Dubey", 2019
+  ),
+  (
+    "Sameer Mishra", 2022
+  ),
+  (
+    "Kartikeya Jasuja", 2021
+  ),
+  (
+    "Saumya Tiwari", 2020
+  );
+SELECT Name FROM Fetch2020 WHERE YEAR = 2020;
+
+Question 4: Write a query to fetch all teachers from CS department.
+Answer 4:
+CREATE TABLE FetchCSE (
+  Name TEXT NOT NULL,
+  Branch TEXT NOT NULL
+);
+INSERT INTO FetchCSE(
+  Name, Branch
+) 
+VALUES 
+  (
+    "Yash Richhariya", "CSE"
+  ),
+  (
+    "Ansh Khandelwal", "ME"
+  ),
+  (
+    "Kushagra Dubey", "CSE"
+  ),
+  (
+    "Sameer Mishra", "EE"
+  ),
+  (
+    "Kartikeya Jasuja", "EX"
+  ),
+  (
+    "Saumya Tiwari", "EE"
+  );
+SELECT Name FROM FetchCSE WHERE Branch = "CSE";
+
+Question 5: Write a query to edit at least 3 records of students.
+Answer 5:
+CREATE TABLE StudentInfo (
+  Name TEXT NOT NULL,
+  Age INT NOT NULL,
+  Branch TEXT NOT NULL,
+  RegNum INT NOT NULL,
+  year INT NOT NULL
+);
+INSERT INTO StudentInfo(
+  Name, Age, Branch, RegNum, year
+) 
+VALUES 
+  (
+    "Yash Richhariya", 19, "CSE", 
+    69, 2
+  ),
+  (
+    "Ansh Khandelwal", 18, "EX", 
+    14, 1
+  ),
+  (
+    "Kushagra Dubey", 19, "EE", 
+    39, 2
+  ),
+  (
+    "Sameer Mishra", 20, "ME",
+    61, 3
+  ),
+  (
+    "Kartikeya Jasuja", 20, "EE", 
+    42, 3
+  ),
+  (
+    "Saumya Tiwari", 19, "CSE", 
+    62, 2
+  );
+UPDATE StudentInfo set YEAR = 2 where YEAR = 1;
+UPDATE StudentInfo SET YEAR = 3 WHERE YEAR = 2;
+UPDATE StudentInfo SET YEAR = 4 WHERE YEAR = 3;
+SELECT * FROM StudentInfo;
+
+Question 6: Write a query to delete 2 records from teachers table.
+Answer 6:
+CREATE TABLE Teachers (
+  Name TEXT NOT NULL,
+  Domain TEXT NOT NULL,
+  Department TEXT NOT NULL
+);
+INSERT INTO Teachers(
+  Name, Domain, Department
+) 
+VALUES 
+  (
+    "Prakhar Gautam", "OOPM", "CSE"
+  ),
+  (
+    "Suyash Dubey", "Mathematics", "EE"
+  ),
+  (
+    "Shivendu Dubey", "Basic Civil", "CE"
+  ),
+  (
+    "Avani Mishra", "Software Engineering", "CS"
+  ),
+  (
+    "Parul Sharma", "BEEE", "CE"
+  ),
+  (
+    "Ashok Verma", "English", "EX"
+  );
+DELETE FROM Teachers WHERE Domain = "OOPM";
+DELETE FROM Teachers WHERE Domain = "Mathematics";
+SELECT * FROM Teachers;
